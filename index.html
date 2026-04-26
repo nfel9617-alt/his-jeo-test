@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بكالوريا تجريبي - تاريخ وجغرافيا | منصة نوفل</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #1e3a8a; /* أزرق داكن أكاديمي */
+            --secondary-color: #3b82f6; /* أزرق فاتح */
+            --history-color: #b91c1c; /* أحمر لقسم التاريخ */
+            --geo-color: #047857; /* أخضر لقسم الجغرافيا */
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --border-color: #e2e8f0;
+            --card-bg: #ffffff;
+            --footer-bg: #0f172a;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            background-color: var(--card-bg);
+            padding: 35px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-bottom: 5px solid var(--primary-color);
+            position: relative;
+        }
+
+        .badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        header h2 {
+            color: #475569;
+            font-size: 18px;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* أزرار التحكم */
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .btn-print {
+            background-color: #475569;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .btn-print:hover { 
+            background-color: #334155; 
+            transform: translateY(-2px);
+        }
+
+        /* محتوى الامتحان */
+        .content-section {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .subject-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .history-bg { background-color: var(--history-color); }
+        .geo-bg { background-color: var(--geo-color); }
+
+        .part-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .quote-box {
+            font-family: 'Amiri', serif;
+            font-size: 20px;
+            color: #334155;
+            background-color: #f1f5f9;
+            border-right: 5px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            line-height: 2;
+        }
+
+        .quote-source {
+            font-size: 14px;
+            color: #64748b;
+            text-align: left;
+            margin-top: 10px;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .questions-list {
+            list-style-type: decimal;
+            padding-right: 20px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .questions-list > li { margin-bottom: 20px; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 16px; }
+        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: right; background-color: #fff; }
+        th { background-color: #e2e8f0; font-weight: bold; text-align: center;}
+
+        footer {
+            margin-top: 40px;
+            background-color: var(--footer-bg);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 12px;
+            font-size: 18px;
+        }
+
+        @media print {
+            body { background-color: #fff; padding: 0; }
+            .container { box-shadow: none; max-width: 100%; }
+            .controls, header .badge { display: none; }
+            .content-section { border: none; box-shadow: none; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="badge">بكالوريا - جميع الشعب</div>
+            <h1>مادة التاريخ والجغرافيا</h1>
+            <h2>موضوع تجريبي شامل مستوحى من البكالوريات السابقة - إعداد: منصة نوفل</h2>
+        </header>
+
+        <div class="controls">
+            <button class="btn-print" onclick="window.print()">طباعة الموضوع 🖨️</button>
+        </div>
+
+        <div class="content-section">
+            
+            <div class="subject-title history-bg">أولاً: التاريخ (10 نقاط)</div>
+            
+            <div class="part-title">الجزء الأول: (06 نقاط)</div>
+            
+            <div class="quote-box">
+                " ... وقد اكتسب الاتحاد السوفياتي مركزاً متميزاً في السياسة الدولية سمح له بأن يحتل مكاناً بين <strong>القوى العظمى</strong>. فشارك ستالين على قدم المساواة، مع روزفلت وهاري ترومان وتشرشل في <strong>مؤتمرات يالطا</strong> وبوتسدام، وخصص للاتحاد السوفييتي مقعد دائم في مجلس الأمن في إطار <strong>الأمم المتحدة</strong>. ورغم التضحيات التي لحقت به خلال الحرب، فقد خرج في وضع متميز... وبالمنطق نفسه يمكن القول إن الولايات المتحدة الأمريكية قد خرجت هي الأخرى الفائز الآخر من هذه الحرب العالمية..."
+                <div class="quote-source">المصدر: د. حازم الببلاوي - النظام الاقتصادي الدولي المعاصر، ص 22-23.</div>
+            </div>
+
+            <ol class="questions-list">
+                <li>اشرح ما تحته خط في النص: (القوى العظمى - مؤتمر يالطا - الأمم المتحدة).</li>
+                <li>عرّف بالشخصيات التاريخية التالية: <strong>جوزيف ستالين</strong> - <strong>هاري ترومان</strong>.</li>
+                <li>أكمل الجدول التاريخي التالي:
+                    <table>
+                        <tr>
+                            <th>الحدث التاريخي</th>
+                            <th>تاريخه (اليوم/الشهر/السنة)</th>
+                        </tr>
+                        <tr>
+                            <td>تأسيس هيئة الأمم المتحدة</td>
+                            <td>.................................</td>
+                        </tr>
+                        <tr>
+                            <td>.................................</td>
+                            <td>12 مارس 1947</td>
+                        </tr>
+                        <tr>
+                            <td>تأسيس حلف الشمال الأطلسي (الناتو)</td>
+                            <td>.................................</td>
+                        </tr>
+                    </table>
+                </li>
+            </ol>
+
+            <div class="part-title">الجزء الثاني: (04 نقاط)</div>
+            <p style="font-size: 18px;">
+                أدى تراجع القوى الاستعمارية التقليدية (فرنسا وبريطانيا) بعد الحرب العالمية الثانية إلى بروز نظام دولي جديد طبعته الثنائية القطبية، ودخل العالم في صراع جديد عُرف بـ "الحرب الباردة".
+                <br><strong>المطلوب:</strong> انطلاقاً من الفقرة واعتماداً على مكتسباتك القبلية، اكتب مقالاً تاريخياً تبرز فيه:
+            </p>
+            <ul class="questions-list" style="list-style-type: disc; margin-right: 20px;">
+                <li>معايير تشكل العالم (التاريخية والسياسية) بعد الحرب العالمية الثانية.</li>
+                <li>أسباب الصراع بين المعسكرين (الشرقي الشيوعي والغربي الرأسمالي).</li>
+            </ul>
+
+            <hr style="margin: 40px 0; border: 1px solid #e2e8f0;">
+
+            <div class="subject-title geo-bg">ثانياً: الجغرافيا (10 نقاط)</div>
+            
+            <div class="part-title">الجزء الأول: (06 نقاط)</div>
+            <ol class="questions-list">
+                <li>اشرح المصطلحات الجغرافية التالية: <strong>الاكتفاء الذاتي</strong> - <strong>التخطيط المركزي</strong> - <strong>الصناعة التحويلية</strong>.</li>
+                <li>إليك جدول يمثل نسبة مساهمة بعض الدول في التجارة العالمية لسنة 2022:
+                    <table>
+                        <tr>
+                            <th>الدولة</th>
+                            <td>الولايات المتحدة</td>
+                            <td>الصين</td>
+                            <td>ألمانيا</td>
+                            <td>اليابان</td>
+                        </tr>
+                        <tr>
+                            <th>نسبة المساهمة (%)</th>
+                            <td>13.5 %</td>
+                            <td>14.7 %</td>
+                            <td>7.8 %</td>
+                            <td>4.5 %</td>
+                        </tr>
+                    </table>
+                    <span style="font-size: 14px; color: #64748b;">المصدر: المنظمة العالمية للتجارة (WTO) 2023.</span>
+                    <br><br>
+                    <strong>أ.</strong> مثّل معطيات الجدول بواسطة أعمدة بيانية. (المقياس: 1 سم = 2% ، 1 سم = عمود واحد).<br>
+                    <strong>ب.</strong> علّق على الرسم البياني المستخلص.
+                </li>
+            </ol>
+
+            <div class="part-title">الجزء الثاني: (04 نقاط)</div>
+            <p style="font-size: 18px;">
+                شهد العالم منذ نهاية القرن العشرين تسارعاً كبيراً في وتيرة <strong>العولمة</strong>، حيث أصبحت العلاقات الاقتصادية والثقافية بين الدول أكثر ترابطاً. وقد لعبت عدة وسائل دوراً محورياً في انتشار هذه الظاهرة، مما أثر بشكل مباشر على دول العالم المتخلف.
+                <br><strong>المطلوب:</strong> انطلاقاً من الفقرة واعتماداً على مكتسباتك، اكتب مقالاً جغرافياً تبرز فيه:
+            </p>
+            <ul class="questions-list" style="list-style-type: disc; margin-right: 20px;">
+                <li>وسائل انتشار العولمة في العالم.</li>
+                <li>انعكاساتها (تأثيراتها الإيجابية والسلبية) على دول العالم المتخلف.</li>
+            </ul>
+
+        </div>
+
+        <footer>
+            تم الإنجاز تحت إشراف <strong>منصة نوفل</strong> التعليمية <br>
+            <span style="font-size: 16px; font-weight: normal; margin-top: 10px; display: inline-block; color: #94a3b8;">بوابة النجاح والتفوق في شهادة البكالوريا</span>
+        </footer>
+
+    </div>
+
+</body>
+</html>
